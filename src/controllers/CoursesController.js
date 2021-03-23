@@ -31,5 +31,24 @@ module.exports = {
     } catch (err) {
       next(err);
     }
+  },
+
+  async update(req, res, next) {
+    const { id } = req.params;
+    const { name } = req.body;
+    try {
+      if (!name)
+        next(new Error('Preencha os campos requisitados'));
+
+      await knex('courses')
+            .where('id', id)
+            .update({
+              name
+            });
+
+      return res.status(200).send({ message: "Ok" });
+    } catch (err) {
+      next(err);
+    }
   }
 };
