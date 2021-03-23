@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Abel Souza Costa Junior <abelsouzacosta@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
