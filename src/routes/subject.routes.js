@@ -5,6 +5,7 @@ const router = express.Router();
 
 router
   .get('/list', SubjectsController.index)
-  .post('/create', SubjectsController.create);
+  .post('/create', SubjectsController.create)
+  .put('/update/:id', SubjectsController.update);
 
 module.exports = router;
