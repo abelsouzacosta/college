@@ -1,0 +1,17 @@
+{
+  "name": "basic-college-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Abel Souza Costa Junior <abelsouzacosta@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "knex": "^0.95.2",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1"
+  }
+}
