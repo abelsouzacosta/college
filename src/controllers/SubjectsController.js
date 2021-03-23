@@ -14,5 +14,25 @@ module.exports = {
     } catch (err) {
       next(err);
     }
+  },
+
+  async create(req, res, next) {
+    const { name } = req.body;
+    try {
+      if (!name)
+        next(new Error('Preencha o campo requisitado'));
+
+      const subject = await knex('subjects')
+                            .insert({
+                              name
+                            });
+
+      if (subject <= 0)
+        next(new Error('Não foi possível criar uma nova matéria dentro do banco de dados'));
+
+      return res.status(200).send({ message: "Ok" });
+    } catch (err) {
+      next(err);
+    }
   }
 }
