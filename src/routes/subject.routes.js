@@ -4,6 +4,7 @@ const SubjectsController = require('../controllers/SubjectsController');
 const router = express.Router();
 
 router
-  .get('/list', SubjectsController.index);
+  .get('/list', SubjectsController.index)
+  .post('/create', SubjectsController.create);
 
 module.exports = router;
