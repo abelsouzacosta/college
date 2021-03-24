@@ -72,5 +72,18 @@ module.exports = {
     } catch (err) {
       next(err);
     }
+  },
+
+  async delete(req, res, next) {
+    const { id } = req.params;
+    try {
+      await knex('students')
+            .where('id', id)
+            .del();
+
+      return res.status(200).send({ message: "Ok" });
+    } catch (err) {
+      next(err);
+    }
   }
 };
