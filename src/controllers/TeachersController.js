@@ -31,5 +31,29 @@ module.exports = {
     } catch (err) {
       next(err);
     }
+  },
+
+  async update(req, res, next) {
+    const { id } = req.params;
+    try {
+      const teacher = await knex('teachers')
+      .where('id', id);
+
+      const [{ name, age, subject_id }] = teacher;
+
+      const { _name = name, _age = age, _subject_id = subject_id } = req.body;
+
+      await knex('teachers')
+            .where('id', id)
+            .update({
+              name: _name,
+              age: _age,
+              subject_id: _subject_id
+            });
+
+      return res.status(200).send({ message: "Ok" });
+    } catch (err) {
+      next(err);
+    }
   }
 }
