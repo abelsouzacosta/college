@@ -27,13 +27,13 @@ module.exports = {
       let address = await knex('addresses')
       .where('student_id', student_id);
 
-      const [{ country, state, city, district, street, cep }] = address;
+      const [{ id, country, state, city, district, street, cep }] = address;
 
       const { _country = country, _state = state, _city = city,
         _district = district, _street = street, _cep = cep } = req.body;
 
       await knex('addresses')
-            .where('student_id', student_id)
+            .where('id', id)
             .update({
               country: _country,
               state: _state,
