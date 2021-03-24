@@ -14,13 +14,26 @@ module.exports = {
       if (student_id) {
         query.where('id', student_id);
         const [{ name, cpf, course_id }] = await query;
-        const coursename = await knex('courses')
+        const course = await knex('courses')
                                   .select('name')
                                   .where('id', course_id);
+        const [{ country, state, city,
+                  district, street, cep }] = await knex('addresses')
+                              .where('student_id', student_id);
+
+        const address = {
+          country,
+          state,
+          city,
+          district,
+          street,
+          cep
+        }
         result = {
           name,
           cpf,
-          coursename
+          course,
+          address
         };
         return res.status(200).json(result);
       }
