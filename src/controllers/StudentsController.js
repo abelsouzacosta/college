@@ -31,5 +31,22 @@ module.exports = {
     } catch (err) {
       next(err);
     }
+  },
+
+  async create(req, res, next) {
+    const { name, cpf, course_id } = req.body;
+    try {
+      if (!(name || cpf || course_id))
+        next(new Error('Por favor preencha todos os campos'));
+
+      await knex('students')
+            .insert({
+              name, cpf, course_id
+            });
+
+      return res.status(200).send({ message: "Ok" });
+    } catch (err) {
+      next(err);
+    }
   }
 };
