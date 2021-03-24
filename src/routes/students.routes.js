@@ -5,6 +5,7 @@ const router = express.Router();
 router
   .get('/list', StudentsController.index)
   .post('/create', StudentsController.create)
-  .put('/update/:id', StudentsController.update);
+  .put('/update/:id', StudentsController.update)
+  .delete('/delete/:id', StudentsController.delete);
 
 module.exports = router;
