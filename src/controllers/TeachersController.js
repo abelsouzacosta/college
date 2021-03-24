@@ -14,5 +14,22 @@ module.exports = {
     } catch (err) {
       next(err);
     }
+  },
+
+  async create(req, res, next) {
+    const { name, age, subject_id } = req.body;
+    try {
+      if (!(name || age || subject_id))
+        next(new Error('Por favor preencha os campos requisitados'));
+
+      await knex('teachers')
+            .insert({
+              name, age, subject_id
+            });
+
+      return res.status(200).send({ message: "Ok" });
+    } catch (err) {
+      next(err);
+    }
   }
 }
