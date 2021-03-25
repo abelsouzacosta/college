@@ -4,6 +4,8 @@
   <img src=".github/knex.png" alt="demonstration" width="450">
 <h3>
 
+<br>
+
 API lida com professores, alunos, cursos e disciplinas.
 
 ## Tecnologias utilizadas
