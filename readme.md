@@ -56,9 +56,9 @@ yarn knex seed
 
 O banco de dados está disposto da seguinte forma:
 
-<p align="center">
-  <img src"./.github/College.png">
-</p>
+<h3 align="center">
+  <img src=".github/College.png" alt="demonstration" width="700">
+<h3>
 
 O ambiente das requisições do Insomnia pode ser obtido clicando no botão abaixo:
 
