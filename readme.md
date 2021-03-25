@@ -64,6 +64,6 @@ O banco de dados está disposto da seguinte forma:
   <img src=".github/College.png" alt="demonstration" width="700">
 <h3>
 
-Para testar a api usando o Insomnia obtenha o ambiente no botão abaixo:
+### Ambiente de testes
 
-[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=College&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fabelsouzacosta%2Flibrary-content%2Fmaster%2Fcollege_api.json%3Ftoken%3DAHJQ6XDCVRAFTSDM4BKEQWDALQOQ2)
+Para baixar o ambiente do Insomnia dessa api use o botaão abaixo:
