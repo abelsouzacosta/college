@@ -66,4 +66,6 @@ O banco de dados está disposto da seguinte forma:
 
 ### Ambiente de testes
 
-Para baixar o ambiente do Insomnia dessa api use o botaão abaixo:
+Para baixar o ambiente do Insomnia dessa api use o botão abaixo:
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=College&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fabelsouzacosta%2Flibrary-content%2Fmaster%2Fcollege_api.json%3Ftoken%3DAHJQ6XDCVRAFTSDM4BKEQWDALQOQ2)
