@@ -4,7 +4,7 @@
   <img src=".github/knex.png" alt="demonstration" width="450">
 <h3>
 
-Essa aplicação lida com o domínio de uma faculdade, sendo possível cadastrar, alterar, listar e deletar alunos, professores, cursos e matérias.
+API lida com professores, alunos, cursos e disciplinas.
 
 ## Tecnologias utilizadas
 
