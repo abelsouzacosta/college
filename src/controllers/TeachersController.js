@@ -35,20 +35,14 @@ module.exports = {
 
   async update(req, res, next) {
     const { id } = req.params;
+    const { name, age, subject_id } = req.body;
     try {
-      const teacher = await knex('teachers')
-      .where('id', id);
-
-      const [{ name, age, subject_id }] = teacher;
-
-      const { _name = name, _age = age, _subject_id = subject_id } = req.body;
-
       await knex('teachers')
             .where('id', id)
             .update({
-              name: _name,
-              age: _age,
-              subject_id: _subject_id
+              name,
+              age,
+              subject_id
             });
 
       return res.status(200).send({ message: "Ok" });
