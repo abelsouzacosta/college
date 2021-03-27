@@ -23,27 +23,21 @@ module.exports = {
 
   async update(req, res, next) {
     const { student_id } = req.params;
+    const { country, state, city, district, street, cep } = req.body;
     try {
       let address = await knex('addresses')
       .where('student_id', student_id);
 
-      const [{ id, country, state, city, district, street, cep }] = address;
-
-      const { _country = country, _state = state, _city = city,
-        _district = district, _street = street, _cep = cep } = req.body;
-
       await knex('addresses')
-            .where('id', id)
+            .where('id', student_id)
             .update({
-              country: _country,
-              state: _state,
-              city: _city,
-              district: _district,
-              street: _street,
-              cep: _cep
+              country, state,
+              city, district,
+              street, cep
             });
 
-      return res.status(200).send({ message: "Ok" });
+
+      return res.status(200).send({ message: "Ok", street });
     } catch (err) {
       next(err);
     }
